@@ -8,8 +8,9 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         chrome.scripting.executeScript({
           target: { tabId: tab.id },
           func: () => {
-            console.log(document.querySelector('.red-pill-button'))
-            return document.body.innerHTML;
+            // console.log(document.querySelector('div.form-submit-wrapper button.red-pill-button'))
+            document.querySelector('div.form-submit-wrapper button.red-pill-button').click();
+            // return document.body.innerHTML;
           }
         }, function(result) {
           // console.log(result[0].result)
